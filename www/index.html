@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC21pRtIPymljS4bJFqg1sVSi_CnHe-m_k&callback=initMap"
+        defer></script>
+</head>
+
+<body>
+    <header class="navegator-index">
+        <input type="text" name="search" id="search" placeholder="Procurar">
+        <div class="contain-button">
+            <input class="login" type="button" value="Login">
+            <input class="cadastro" type="button" value="Cadastrar-se">
+        </div>
+    </header>
+    <div id="map">
+        
+    </div>
+    
+    <script>
+        // Initialize and add the map
+        function initMap() {
+            // The location of Uluru
+            const uluru = {
+                lat: -25.344,
+                lng: 131.036
+            };
+            // The map, centered at Uluru
+            const map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 4,
+                center: uluru,
+            });
+            // The marker, positioned at Uluru
+            const marker = new google.maps.Marker({
+                position: uluru,
+                map: map,
+            });
+        }
+    </script>
+</body>
+
+</html>
